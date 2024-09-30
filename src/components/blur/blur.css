@@ -1,0 +1,68 @@
+.blur{
+    background-image: url(../../Assets/blur2re.jpeg) !important;
+    background-size: cover !important;
+    padding: 20px;
+    position: relative;
+    color: white;
+    padding-top: 60px;
+    font-size: 21px;
+    margin-top: 100px;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+  
+  .blur .content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+  }
+  
+  .blur .content img {
+    /* Set the image to take 50% of the container width */
+    height: auto;
+    width: 500px !important;
+  }
+  
+ .blur .data {
+  max-width: 100%;
+  padding-left: 20px;
+  margin-top: 60px;
+  text-align: left;
+  
+  }
+  
+ .blur .data h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #E91E63;
+    font-weight: bold;
+    text-align: left;
+  }
+  .blur p{
+    color: white;
+    font-weight: bold;
+  }
+  .blur .data p {
+    margin-bottom: 15px;
+  }
+  
+  .blur .data a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff; /* Bootstrap blue */
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  .blur .data a :hover{
+    transform: translateX(-10px);
+  }
+
+  @media (max-width:767px) {
+    .blur .content {
+      flex-direction: column;
+    }
+    .blur .content img{
+      margin-left: -58px;
+    }
+  }

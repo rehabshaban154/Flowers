@@ -1,0 +1,126 @@
+.item{
+    width: 300px;
+    text-align: center;
+    padding: 12px;
+    box-shadow: -1px 1px 2px 3px var(--main);
+    border-radius: 4px;
+    padding-bottom: 38px;
+    position: relative;
+}
+.item img{
+    width: 250px;
+    height: 170px;
+    border-radius: 3px;
+}
+.item a:hover{
+    background-color: var(--alt);
+}
+.item .overlay {
+    width: 275px;
+    height: 199px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.56);
+    top: 12px;
+    left: 12px;
+    transition: 0.8s;
+    opacity: 0;
+}
+.item .overlay a {
+    top: 72px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold !important;
+}
+.item .overlay a :hover{
+    background-color: black !important;
+    color: white !important;
+}
+.item:hover .overlay { /* Changed this line */
+    opacity: 1;
+}
+
+.item h2{
+    font-size: 20px;
+    margin-top: 14px;
+    color: gray;
+    font-family: cursive;
+}
+.item h3{
+    text-align: left;
+    color: #FDD835;
+    font-weight: bold;
+}
+.item .disc{
+    border-bottom: 2px solid var(--main);
+    padding-bottom: 3px;
+}
+.item a,
+.item-details-container button{
+background-color: var(--main);
+color: white;
+padding: 12px;
+position: relative;
+top: 20px;
+border-radius: 4px;
+transition: 0.5s;
+font-weight: bold;
+}
+.item-details-container button{
+    padding: 8px;
+    margin-left: 10px;
+    top: 0;
+    border: none;
+    outline: none;
+}
+.item-details-container input{
+    padding: 7px;
+    outline: none;
+    border-radius: 8px;
+    margin-left: 16px;
+}
+.item-details-container label{
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--alt);
+}
+.clear{
+    margin-left: 10px;
+    background-color: var(--main);
+    border: none;
+    padding: 11px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.clear:hover{
+    transform: scale(0.9);
+}
+.sort{
+    font-weight: bold;
+    color: var(--main);
+}
+button:not(.success-modal button){
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px !important;
+    border: none;
+    font-weight: bold;
+}
+.add{
+    margin-top: 20px;
+    background-color: var(--alt);
+    color: white;
+}
+.overlay button{
+    position: relative !important;
+    top: 88px !important;
+    background-color: white !important;
+    color: black !important;
+    margin-top: -2px !important;
+}

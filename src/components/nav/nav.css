@@ -1,0 +1,104 @@
+/* nav.css */
+
+.navbar {
+    padding: 1rem; /* Adjust padding as necessary */
+}
+
+.navbar i {
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid var(--main);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.active {
+    color: var(--alt) !important;
+}
+
+.navbar a {
+    font-weight: bold;
+}
+
+.item-count {
+    position: absolute;
+    top: 14px;
+    width: 25px;
+    height: 25px;
+    right: 107px;
+    display: flex;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.5rem; /* Reduced padding on smaller screens */
+    }
+
+    .navbar-collapse {
+        margin-top: 0.5rem; /* Space between navbar and dropdown items */
+    }
+
+    .item-count {
+       top: 90%;
+        font-size: 10px; /* Smaller font size */
+        width: 20px;
+        height: 20px;
+        left: 35px;
+    }
+
+    .navbar .nav-item {
+        text-align: center; /* Center nav items */
+        padding: 10px 0; /* Padding for touch targets */
+    }
+
+    .navbar .navbar-nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .d-flex {
+        width: 100%; /* Full width for form */
+    }
+
+    /* Reduce icon size for smaller devices */
+    .navbar i {
+        width: 25px;
+        height: 25px;
+        padding: 4px;
+    }
+    .logo{
+        position: relative;
+        left: -431px;
+    }
+}
+
+@media (max-width: 576px) {
+    .item-count {
+        right: 50px; /* Further adjust for very small screens */
+        top: auto;
+        font-size: 8px; /* Smaller font size */
+        width: 18px;
+        height: 18px;
+    }
+    .navbar-brand img{
+        position: relative;
+        left: -200px;
+    }
+    .navbar-toggler{
+        position: relative;
+        left: 0;
+    }
+}

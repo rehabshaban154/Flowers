@@ -1,0 +1,73 @@
+.item-details-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 20px;
+  gap: 30px;
+}
+
+/* Styling for the left section */
+.item-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.item-info {
+  text-align: center;
+}
+
+.item-info h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item-info h2 {
+  font-size: 20px;
+  color: green;
+  margin: 10px 0;
+}
+
+.item-info p {
+  font-size: 16px;
+  color: gray;
+}
+
+/* Styling for the right section */
+.item-right {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.paragraph {
+  font-size: 16px;
+}
+
+.client-rate {
+  font-size: 16px;
+  font-weight: bold;
+  color: darkorange;
+}
+
+.reviews {
+  font-style: italic;
+  font-size: 16px;
+  color: #666;
+}
+.item-right p{
+  font-size: 20px;
+}

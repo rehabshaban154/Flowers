@@ -1,0 +1,44 @@
+.why {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background-color: #8080801a;
+    margin-top: 40px;
+  }
+  
+  .why .content {
+    width: 50%;
+    padding-right: 20px;
+  }
+  
+  .why img {
+    width: 50%;
+    height: auto;
+    border-radius:7px;
+  }
+  
+  @media (max-width: 768px) {
+    .why {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .why .content, .why img {
+      width: 50%;
+      padding: 0;
+    }
+  
+    .why .content {
+      margin-bottom: 20px;
+    }
+    .why .content p{
+      font-size: 24px;
+    width: 308px;
+    text-align: center;
+    margin: auto;
+    margin-left: -59px;
+    }
+  }
+  

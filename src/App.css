@@ -1,0 +1,50 @@
+:root{
+  --alt:#49846c;
+  --main:#B5CBC2;
+}
+span{
+  color: var(--main);
+}
+a{
+  text-decoration: none !important;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width:992px) {
+  .container ,.content{
+    flex-direction: column;
+  }
+}
+@media (max-width:767px) {
+  .item-details-container {
+    flex-direction: column;
+  }
+ .container .item{
+    width: 100%;
+  }
+  .container .item .overlay{
+    width: 94%;
+  }
+  .shop .item:last-of-type{
+    margin-bottom: 160px;
+  }
+  
+}
+
+.shop-heading {
+  font-size: 3rem;  /* Adjust font size as needed */
+  font-family: 'Cursive', sans-serif;  /* Use a stylish font */
+  font-weight: bold;  /* Make it bold */
+  text-align: center;  /* Center the text */
+  background: linear-gradient(to right, rgb(226, 168, 20), #d40797);
+  /* Linear gradient colors */
+  -webkit-background-clip: text;  /* For Safari/Chrome */
+  -webkit-text-fill-color: transparent;  /* For Safari/Chrome */
+  background-clip: text;  /* Standard property */
+  text-fill-color: transparent;  /* Standard property */
+  margin-top: 30px;  /* Adjust margin */
+}

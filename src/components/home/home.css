@@ -1,0 +1,132 @@
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden;
+}
+
+.home img {
+  position: absolute; /* Make the image cover the entire container */
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Set width to 100% */
+  height: 100%; /* Set height to 100% */
+  object-fit: cover; /* Ensures the image covers the container without stretching */
+  transform: translate(-50%, -50%); /* Center the image */
+  z-index: -1; /* Send the image to the back */
+}
+
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional background overlay */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.info h2 {
+  font-size: 2rem;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.info span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.info a {
+  background-color: var(--main);
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  position: relative;
+  top: 25px;
+}
+
+.login {
+  position: absolute;
+  top: 60px; /* Adjust based on profile icon position */
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  display: block; /* Ensure it's visible */
+}
+
+/* About Section */
+.about .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about span {
+  color: var(--alt) !important;
+  font-weight: bold !important;
+  font-size: 20px;
+}
+
+.about .disc {
+  flex-basis: 50%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .home img {
+    height: 70vh; /* Adjust height for smaller screens */
+  }
+
+  .info h2 {
+    font-size: 1.5rem; /* Smaller font size */
+  }
+
+  .info span {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  .about .container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .about img {
+    width: 90%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .about .disc {
+    flex-basis: 100%; /* Take full width */
+    text-align: center; /* Center text */
+  }
+}
+
+@media (max-width: 480px) {
+  .info a {
+    padding: 10px; /* Smaller button padding */
+  }
+
+  .info h2 {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  .info span {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .about span {
+    font-size: 18px; /* Smaller font size */
+  }
+
+  .about .disc {
+    font-size: 14px; /* Smaller font size */
+  }
+  .info{
+    top: 30%;
+    left: 37%;
+  }
+}

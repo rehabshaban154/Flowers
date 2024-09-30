@@ -1,0 +1,12 @@
+.contact .container{
+display: flex;
+justify-content: space-evenly;
+}
+.contact form label{
+    font-weight: bold;
+    color: var(--alt);
+}
+.form-control:focus {
+    box-shadow: none !important;
+    border-color: none !important;
+}
