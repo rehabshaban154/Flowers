@@ -29,6 +29,8 @@ h2 {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;
+    min-height: 405px;
+    min-width: 353px;
   }
   
   .brand-card:hover {

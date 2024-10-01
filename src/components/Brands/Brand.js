@@ -29,7 +29,7 @@ export default function Brand() {
           </div>
         ))}
       </div>
-      <Link to='/shop' style={{position:'absolute',left:'50%',backgroundColor:'#E91E63', transition:'0.7s'}} className='link'>Time To Shopping!😉</Link>
+      <Link to='/shop' style={{position:'absolute',left:'50%',backgroundColor:'#E91E63', transition:'0.7s', color:'white'}} className='link'>Time To Shopping!😉</Link>
     </div>
   );
 }

@@ -56,7 +56,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="text-center col-lg-4 col-md-6 mb-4">
-          <p>© {new Date().getFullYear()} <span style={{color:'var(--alt)',fontWeight:'bold'}}>Rehab Shaban</span> . All Rights Reserved.</p>
+          <p className='copy'>© {new Date().getFullYear()} <span style={{color:'var(--alt)',fontWeight:'bold'}}>Rehab Shaban</span> . All Rights Reserved.</p>
         </div>
         </div>
         {/* Copyright Section */}

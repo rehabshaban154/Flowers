@@ -4,6 +4,7 @@ import '../../components/Shop/shop.css';
 import Data from './Data';
 import { useCart } from '../Shop/Cartcontext';
 import SuccessBox from '../Successbox/Sucsess';
+import { Link } from 'react-router-dom';
 
 export default function Shop() {
   const { addToCart } = useCart();
@@ -41,7 +42,7 @@ export default function Shop() {
   };
 
   return (
-    <>
+    <div className='shop'>
       {/* Title */}
       <div className="title flex" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'bold', marginTop: '30px', fontFamily: 'cursive' }}>
         <h2 className='shop-heading'>Shop</h2>
@@ -88,10 +89,11 @@ export default function Shop() {
             />
           ))
         )}
+        <Link to='/occasion' className='shoose'>OR Choose Your <br/>Specific Occasion 🔎</Link>
       </div>
 
       {/* Success Modal */}
       {showModal && <SuccessBox message={successMessage} onClose={handleCloseModal} />}
-    </>
+    </div>
   );
 }

@@ -1,3 +1,6 @@
+.shop{
+    padding-bottom: 80px;
+}
 .item{
     width: 300px;
     text-align: center;
@@ -123,4 +126,14 @@ button:not(.success-modal button){
     background-color: white !important;
     color: black !important;
     margin-top: -2px !important;
+}
+
+.shoose{
+    background-color: rgb(233, 30, 99);
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    position: relative;
+    top: 112px;
+
 }

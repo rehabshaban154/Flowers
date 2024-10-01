@@ -1,10 +1,9 @@
 .blur{
-    background-image: url(../../Assets/blur2re.jpeg) !important;
-    background-size: cover !important;
+  background-color: #8080801a;
     padding: 20px;
     position: relative;
-    color: white;
-    padding-top: 60px;
+    color: black !important;
+    padding-top: 145px;
     font-size: 21px;
     margin-top: 100px;
     overflow: hidden;
@@ -16,12 +15,15 @@
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
+    color: black !important;
   }
   
-  .blur .content img {
+  .blur  img {
     /* Set the image to take 50% of the container width */
-    height: auto;
-    width: 500px !important;
+    position: absolute;
+    right: 247px;
+    top: 89px;
+    width: 254px;
   }
   
  .blur .data {
@@ -40,8 +42,11 @@
     text-align: left;
   }
   .blur p{
-    color: white;
+    color: gray;
     font-weight: bold;
+    flex-basis: 50%;
+    max-width: 100%;
+    text-align: left;
   }
   .blur .data p {
     margin-bottom: 15px;
@@ -57,12 +62,17 @@
   .blur .data a :hover{
     transform: translateX(-10px);
   }
-
+@media (max-width:992px) {
+  .blur img{
+    top: 50px;
+  }
+}
   @media (max-width:767px) {
     .blur .content {
       flex-direction: column;
     }
-    .blur .content img{
-      margin-left: -58px;
+    .blur img{
+      top: 43px;
+      right: 100px;
     }
   }

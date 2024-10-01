@@ -4,6 +4,16 @@
   height: 100vh; /* Full height of the viewport */
   overflow: hidden;
 }
+.home:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color:#00000052;
+  width: 100%;
+  height: 100%;
+
+}
 
 .home img {
   position: absolute; /* Make the image cover the entire container */
@@ -23,11 +33,15 @@
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional background overlay */
   padding: 20px;
   border-radius: 10px;
+  z-index: 1000;
+  font-size: 30px;
+  font-weight: bold !important;
 }
-
+.info h2:not(.info a){
+  font-size: 40px;
+}
 .info h2 {
   font-size: 2rem;
   margin: 0;
@@ -40,15 +54,19 @@
 }
 
 .info a {
-  background-color: var(--main);
+  background-color: var(--alt);
   color: white;
   font-weight: bold;
   padding: 12px;
   border-radius: 8px;
   position: relative;
   top: 25px;
+  font-size: 26px !important;
+  transition: 0.5s;
 }
-
+.info a:hover{
+  background-color: var(--main);
+}
 .login {
   position: absolute;
   top: 60px; /* Adjust based on profile icon position */
@@ -127,6 +145,6 @@
   }
   .info{
     top: 30%;
-    left: 37%;
+    left:50%;
   }
 }

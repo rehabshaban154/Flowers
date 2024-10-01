@@ -15,12 +15,12 @@ a{
 }
 
 @media (max-width:992px) {
-  .container ,.content{
+  .container ,.content,.brand-container {
     flex-direction: column;
   }
 }
 @media (max-width:767px) {
-  .item-details-container {
+  .item-details-container,.brand-container  {
     flex-direction: column;
   }
  .container .item{
@@ -31,6 +31,9 @@ a{
   }
   .shop .item:last-of-type{
     margin-bottom: 160px;
+  }
+  .brand-container{
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
   
 }

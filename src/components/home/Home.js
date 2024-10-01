@@ -51,15 +51,6 @@ export default function Home() {
         </div>
 
         {/* Profile Icon */}
-        <div 
-          onClick={handleProfileClick}
-          style={{ cursor: 'pointer', position: 'absolute', top: '20px', right: '20px' }} >
-          <span style={{backgroundColor: 'whitesmoke',
-    padding: '12px',
-    borderRadius: '4px',
-    color: 'var(--alt)',
-    fontWeight: 'bold'}}>👤 Profile</span>
-        </div>
 
         {/* Show Login Component */}
         {showLogin && <Login />}

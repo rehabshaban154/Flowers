@@ -28,7 +28,7 @@ export default function HomeBrand() {
           </div>
         ))}
       </div>
-      <Link to='/brand' className='link' style={{backgroundColor:'#E91E63'}}>View All Brands</Link>
+      <Link to='/brand' className='link' style={{backgroundColor:'#E91E63',color:'white'}}>View All Brands</Link>
     </div>
   );
 }
