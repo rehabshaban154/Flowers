@@ -7,7 +7,7 @@ import Modal from '../../Modal';  // Import the Modal component
 import SuccessBox from '../../components/Successbox/Sucsess'; // Import the SuccessBox component
 
 export default function Engagement({ showSuccessMessage }) {
-  const { addToCart } = useContext(useCart); // Use the custom hook to access cart context
+  const { addToCart } = useCart(); // Use the custom hook to access cart context
   const [searchColor, setSearchColor] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const [selectedItem, setSelectedItem] = useState(null);  // To track the selected item for the modal
