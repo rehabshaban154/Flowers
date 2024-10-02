@@ -60,6 +60,7 @@ function App() {
           <Route path="/val" element={<Val showSuccessMessage={showSuccessMessage} />} />
           <Route path="/register" element={!user ? <Register onRegister={handleRegister} /> : <p>Welcome, {user.name}!</p>} />
           <Route path="/contact" element={<Contact />} />
+          
         </Routes>
       </Router>
       </CartProvider>

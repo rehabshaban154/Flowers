@@ -79,9 +79,10 @@ export default function Shop() {
         {sortedItems.length === 0 ? (
           <p>No items found for "{searchColor}"</p>
         ) : (
-          sortedItems.map((item) => (
+          sortedItems.map((item,index) => (
             <Card
-              key={item.id} // Use a unique key for each card
+             key={index}
+              id={item.id} // Use a unique key for each card
               image={item.img}
               title={item.title}
               price={item.price}
