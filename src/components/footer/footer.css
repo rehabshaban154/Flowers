@@ -81,3 +81,8 @@
     text-align: center;
   }
 }
+@media (max-width:767px) {
+  .footer-section ul {
+    margin-left: 0 !important;
+  }
+}
