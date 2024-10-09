@@ -1,66 +1,51 @@
+// Footer.js
+
 import React from 'react';
-import './footer.css'; // Import your CSS file for styling
+import './footer.css'; // Ensure you create this CSS file for styling
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-dark text-white">
-      <div className="container">
-        <div className="row">
-          {/* About Section */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <h5>About Us</h5>
-            <p>
-              At [Our Brand], we believe in celebrating life’s moments with the beauty of flowers. 
-              From weddings to birthdays, our hand-picked arrangements are crafted with love and care.
-            </p>
-          </div>
-          {/* Contact Section */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <h5>Contact Us</h5>
-            <ul className="list-unstyled">
-              <li>
-                <i className="fas fa-phone"></i> +1 (234) 567-890
-              </li>
-              <li>
-                <i className="fas fa-envelope"></i> info@yourflowerbrand.com
-              </li>
-              <li>
-                <i className="fas fa-map-marker-alt"></i> 123 Flower St, Bloomtown, FL 12345
-              </li>
-            </ul>
-          </div>
-          {/* Social Media Section */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <h5>Follow Us</h5>
-            <ul className="list-unstyled social-media">
-              <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-pinterest"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="text-center col-lg-4 col-md-6 mb-4">
-          <p className='copy'>© {new Date().getFullYear()} <span style={{color:'var(--alt)',fontWeight:'bold'}}>Rehab Shaban</span> . All Rights Reserved.</p>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <h2>About Us</h2>
+          <p>We are a flower shop dedicated to providing the best floral arrangements for all occasions. Our passion for flowers drives us to create beautiful experiences for our customers.</p>
         </div>
+        <div className="footer-section">
+          <h2>Contact</h2>
+          <p>Email: support@flowerbrand.com</p>
+          <p>Phone: (123) 456-7890</p>
         </div>
-        {/* Copyright Section */}
-       
+        <div className="footer-section">
+          <h2>Links</h2>
+          <ul style={{marginLeft:'86px'}}>
+            <li><a href="/">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/brand">Brands</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div className="footer-section">
+          <h2>Follow Us</h2>
+          <div className="social-icons">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <FaTwitter />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Flower Brand. All rights reserved |Rehab Shaban</p>
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ const Data =[
     {
         img:en,
         title:"Engangment 💍",
-        path:'/engangment',
+        path:'/engagement',
     },
     {
         img:wedding,

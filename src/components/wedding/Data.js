@@ -11,6 +11,7 @@ const Endata = [
     disc: 'A luxurious bouquet of fresh red roses to complement a beautiful wedding day.',
     price: '$120.00',
     color: 'Red',
+    quantity: 0,  // Add quantity property
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const Endata = [
     disc: 'A radiant golden tulip arrangement to add elegance and charm to the celebration.',
     price: '$150.00',
     color: 'Yellow',
+    quantity: 0,  // Add quantity property
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const Endata = [
     disc: 'A stunning combination of roses and greenery, perfect for the bride.',
     price: '$180.00',
     color: 'Rose Gold',
+    quantity: 0,  // Add quantity property
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const Endata = [
     disc: 'An elegant collection of white lilies and orchids, perfect for a memorable wedding.',
     price: '$200.00',
     color: 'White',
+    quantity: 0,  // Add quantity property
   },
 ];
 

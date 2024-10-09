@@ -1,10 +1,11 @@
+// src/components/Shop/Card.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Card({ id, title, price, image, handleAddToCart }) {
+export default function Card({ id, title, price, img, handleAddToCart }) {
   return (
     <div className="item">
-      <img src={image} alt={title} />
+      <img src={img} alt={title} />
 
       {/* Overlay for Quick View link */}
       <div className="overlay">
@@ -20,7 +21,7 @@ export default function Card({ id, title, price, image, handleAddToCart }) {
 
       <button
         className="add"
-        onClick={() => handleAddToCart({ id, title, price, image })}
+        onClick={() => handleAddToCart({ id, title, price, img })} // Pass item details to add to cart
         style={{ marginTop: '20px', cursor: 'pointer' }}
       >
         Add to Cart+

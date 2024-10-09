@@ -1,55 +1,55 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Card from '../../Card';
 import '../../components/Shop/shop.css';
 import Data from './Data';  
-import { useCart } from '../Shop/Cartcontext'; // Change import to useCart
-import Modal from '../../Modal';  // Import the Modal component
-import SuccessBox from '../../components/Successbox/Sucsess'; // Import the SuccessBox component
+import { useCart } from '../Shop/Cartcontext';  // Using useCart hook for cart functionality
+import Modal from '../../Modal';  // Importing Modal component for quick view
+import SuccessBox from '../../components/Successbox/Sucsess'; // Importing SuccessBox component
 
 export default function Wedding() {
-  const { addToCart } = useCart(); // Use the useCart hook to get addToCart function
+  const { addToCart } = useCart(); // Accessing addToCart from Cart context
   const [searchColor, setSearchColor] = useState('');
   const [sortOrder, setSortOrder] = useState('');
-  const [selectedItem, setSelectedItem] = useState(null);  // To track the selected item for the modal
-  const [isModalOpen, setIsModalOpen] = useState(false);  // To control the modal visibility
-  const [successMessage, setSuccessMessage] = useState(''); // Success message state
+  const [selectedItem, setSelectedItem] = useState(null);  // For modal quick view
+  const [isModalOpen, setIsModalOpen] = useState(false);  // Control for modal visibility
+  const [successMessage, setSuccessMessage] = useState(''); // For success message display
 
-  // Filtering items based on searchColor input
+  // Filter items by color
   const filteredItems = Data.filter((item) =>
     item.color.toLowerCase().includes(searchColor.toLowerCase())
   );
 
-  // Sorting items based on selected price order
+  // Sort items based on price
   const sortedItems = filteredItems.sort((a, b) => {
     if (sortOrder === 'lowToHigh') {
       return parseFloat(a.price.replace('$', '')) - parseFloat(b.price.replace('$', ''));
     } else if (sortOrder === 'highToLow') {
       return parseFloat(b.price.replace('$', '')) - parseFloat(a.price.replace('$', ''));
     } else {
-      return 0; // No sorting applied
+      return 0; // No sorting if no selection is made
     }
   });
 
-  // Function to handle adding an item to the cart
+  // Function to handle adding item to cart
   const handleAddToCart = (item) => {
-    addToCart(item);
+    addToCart({ ...item, quantity: 1 }); // Ensure quantity is set when adding to cart
     setSuccessMessage(`${item.title} has been added to your cart!`);  // Set success message
   };
 
-  // Function to handle quick view of the item
+  // Function to handle quick view
   const handleQuickView = (item) => {
-    setSelectedItem(item);  // Set the selected item for quick view
-    setIsModalOpen(true);   // Open the modal
+    setSelectedItem(item);  // Set selected item for modal
+    setIsModalOpen(true);   // Open modal
   };
 
-  // Function to close the modal
+  // Function to close modal
   const handleCloseModal = () => {
-    setIsModalOpen(false);  // Close the modal
+    setIsModalOpen(false);  // Close modal
   };
 
-  // Function to clear the success message
+  // Function to clear success message
   const closeSuccessMessage = () => {
-    setSuccessMessage('');  // Clear success message on close
+    setSuccessMessage('');  // Clear message
   };
 
   return (
@@ -72,12 +72,12 @@ export default function Wedding() {
 
       {/* Sort by price */}
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <label htmlFor="sortOrder" className='sort' style={{color:'var(--alt)'}}>Sort by price: </label>
+        <label htmlFor="sortOrder" className='sort' style={{ color: 'var(--alt)' }}>Sort by price: </label>
         <select
           id="sortOrder"
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-          style={{ padding: '10px', borderRadius: '10px', border: '1px solid rgb(204, 204, 204)', outline: 'none', marginLeft: '12px' }} >
+          style={{ padding: '10px', borderRadius: '10px', border: '1px solid rgb(204, 204, 204)', outline: 'none', marginLeft: '12px' }}>
           <option value="">Select</option>
           <option value="lowToHigh">Low to High</option>
           <option value="highToLow">High to Low</option>
@@ -89,17 +89,22 @@ export default function Wedding() {
         {sortedItems.length === 0 ? (
           <p>No items found for "{searchColor}"</p>
         ) : (
-          sortedItems.map((item) => (
-            <Card
-              image={item.img}
-              title={item.title}
-              price={item.price}
-              id={item.id} // Use unique id if available
-              key={item.id} // Use unique key if available
-              handleQuickView={() => handleQuickView(item)}  // Pass the function to Card
-              handleAddToCart={() => handleAddToCart(item)} // Pass the function to Card
-            />
-          ))
+          sortedItems.map((item) => {
+            // Destructuring item properties
+            const { img, title, price, id } = item;
+
+            return (
+              <Card
+                image={img}
+                title={title}
+                price={price}
+                id={id}
+                key={id}  // Use unique key
+                handleQuickView={() => handleQuickView(item)}  // Quick view handler
+                handleAddToCart={() => handleAddToCart(item)}  // Add to cart handler
+              />
+            );
+          })
         )}
       </div>
 
@@ -108,7 +113,7 @@ export default function Wedding() {
         <Modal isOpen={isModalOpen} onClose={handleCloseModal} item={selectedItem} />
       )}
 
-      {/* Render the success message only when it exists */}
+      {/* Render the success message if it exists */}
       {successMessage && (
         <SuccessBox message={successMessage} onClose={closeSuccessMessage} />
       )}

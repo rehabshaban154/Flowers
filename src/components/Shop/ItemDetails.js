@@ -1,38 +1,43 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Data from './Data'; // Ensure the path to Data is correct
-import { useCart } from './Cartcontext'; // Your cart context hook
-import SuccessBox from '../Successbox/Sucsess'; // Ensure the path is correct
+import Data from './Data';
+import { useCart } from './Cartcontext';
+import SuccessBox from '../Successbox/Detailssuccess'; // Import SuccessBox
 import './itemdetails.css';
 
 export default function ItemDetails() {
     const { id } = useParams(); // Get the ID from URL params
-    console.log("Fetched ID from URL:", id); // Debugging
-
     const item = Data.find((product) => product.id === parseInt(id)); // Ensure id comparison is correct
-    console.log("Item found:", item); // Debugging
-
     const { addToCart } = useCart(); // Access cart context
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1); // Default quantity is 1
     const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
 
     const handleAddToCart = () => {
         if (item) {
-            addToCart({ id: item.id, title: item.title, price: item.price, image: item.img }, quantity);
-            setSuccessMessage(`${item.title} has been added to your cart!`);
-        } else {
-            setSuccessMessage('Item not found.'); // Display this if the item is not found
+            const quantityNumber = parseInt(quantity);
+            if (quantityNumber > 0) {
+                // Add item to the cart with the specified quantity
+                addToCart({
+                    id: item.id,
+                    title: item.title,
+                    price: item.price,
+                    color: item.color,
+                    description: item.description,
+                    clientRate: item.clientRate,
+                    reviews: item.reviews,
+                    img: item.img,
+                    quantity: quantityNumber, // Use the quantity from the input
+                });
+                setSuccessMessage(`${item.title} added to cart with quantity: ${quantityNumber}`); // Set the success message
+            } else {
+                setSuccessMessage('Please enter a valid quantity.');
+            }
         }
     };
 
-    const handleContinueShopping = () => {
-        setSuccessMessage('');
-        navigate('/shop');
-    };
-
     const handleCloseSuccessBox = () => {
-        setSuccessMessage('');
+        setSuccessMessage(''); // Close the success box
     };
 
     if (!item) {
@@ -63,20 +68,22 @@ export default function ItemDetails() {
                         id="quantity"
                         min="1"
                         value={quantity}
-                        onChange={(e) => setQuantity(parseInt(e.target.value) || 1)} // Ensure a fallback value
+                        onChange={(e) => setQuantity(e.target.value)}
+                        onBlur={(e) => {
+                            if (!e.target.value || isNaN(e.target.value) || parseInt(e.target.value) < 1) {
+                                setQuantity(1); // Ensure valid quantity
+                            }
+                        }}
                     />
-                    <button onClick={handleAddToCart} style={{ marginLeft: '10px', backgroundColor: 'var(--alt)' }}>
+                    <button style={{ marginLeft: '10px', backgroundColor: 'var(--alt)' }} onClick={handleAddToCart}>
                         Add to Cart
                     </button>
                 </div>
             </div>
 
+            {/* Render SuccessBox if there's a success message */}
             {successMessage && (
-                <SuccessBox 
-                    message={successMessage} 
-                    onContinue={handleContinueShopping} 
-                    onClose={handleCloseSuccessBox}
-                />
+                <SuccessBox message={successMessage} onClose={handleCloseSuccessBox} />
             )}
         </div>
     );

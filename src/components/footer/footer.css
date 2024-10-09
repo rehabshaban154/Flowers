@@ -1,63 +1,83 @@
+/* footer.css */
+
 .footer {
-    padding: 40px 0;
-    background-color: #343a40; /* Dark background */
-    color: white;
-    position: relative;
-  }
-  
-  .footer h5 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .footer p {
-    margin: 0;
-    line-height: 1.6;
-  }
-  .copy{
-    right: 46%;
-    position: absolute;
-    top: 266px !important;
-  }
-  .footer ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  .footer li {
-    margin-bottom: 10px;
-  }
-  
-  .footer .social-media li {
-    display: inline;
-    margin-right: 15px;
-  }
-  
-  .footer .social-media a {
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  
-  .footer .social-media a:hover {
-    color: var(--main) /* Change to your brand color */
-  }
-  
-  .text-center {
+  background-color: #f5f5f5e8;
+  padding: 21px 20px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Distribute sections evenly */
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Max width for the content */
+}
+
+.footer-section {
+  flex: 1; /* Equal width for each section */
+  padding: 20px; /* Padding for each section */
+}
+
+.footer-section h2 {
+  margin-bottom: 15px; /* Space below heading */
+  font-size: 1.5em; /* Heading size */
+  color: var(--alt); /* Green color for headings */
+}
+
+.footer-section p, .footer-section ul {
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  list-style: none; /* Remove bullet points */
+}
+
+.footer-section ul {
+  padding-left: 20px; /* Indent list items */
+}
+
+.footer-section ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.footer-section ul li a {
+  color: #333; /* Dark link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.social-icons {
+  display: flex; /* Align icons in a row */
+  gap: 15px; /* Space between icons */
+  font-size: 24px; /* Icon size */
+  color: var(--alt); /* Color for social icons */
+}
+
+.social-icons a {
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.social-icons a:hover {
+  color: #0056b3; /* Change color on hover */
+}
+
+.footer-bottom {
+  text-align: center; /* Center align the copyright text */
+  margin-top: 20px; /* Space above */
+  font-size: 14px; /* Smaller text size */
+  color: #777; /* Light gray text color */
+}
+
+@media (max-width:992px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
     text-align: center;
   }
-  .footer h5{
-    color: var(--alt);
-  }
-  @media (max-width:992px) {
-    .copy{
-      top: 327px !important;
-    }
-  }
-  @media (max-width:767px) {
-    .copy{
-      position: absolute;
-      top: 509px !important;
-      right: auto;
-    }
-  }
+}

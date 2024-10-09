@@ -1,48 +1,57 @@
-// src/components/Shop/Cartcontext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
 
+export const useCart = () => useContext(CartContext);
+
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
-    // Load initial cart from localStorage if available
-    const savedCart = localStorage.getItem('cart');
-    return savedCart ? JSON.parse(savedCart) : []; // Parse saved cart or return empty array
+    // Load the cart from localStorage if available
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart) : [];
   });
 
-  const addToCart = (item) => {
+  // Function to add items to the cart
+  const addToCart = (newItem) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.title === item.title); // Check by title
-      if (existingItem) {
-        // Update quantity if item already exists in the cart
-        return prevCart.map((cartItem) =>
-          cartItem.title === item.title // Check only by title
-            ? { ...cartItem, quantity: cartItem.quantity + 1 } // Increase quantity
-            : cartItem
-        );
+      const existingItemIndex = prevCart.findIndex(cartItem => cartItem.title === newItem.title);
+      if (existingItemIndex !== -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingItemIndex] = {
+          ...updatedCart[existingItemIndex],
+          quantity: updatedCart[existingItemIndex].quantity + newItem.quantity, // Increment quantity
+        };
+        return updatedCart;
       } else {
-        // Add new item with quantity 1
-        return [...prevCart, { ...item, quantity: 1 }];
+        // Initialize quantity for new items
+        return [...prevCart, { ...newItem, quantity: newItem.quantity || 1 }];
       }
     });
   };
 
-  const clearCart = () => {
-    setCart([]); // Clear the cart
+  
+
+  // Function to remove an item from the cart by ID
+  const removeFromCart = (id) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
-  // Effect to save cart to localStorage whenever it changes
+  // Function to clear the entire cart
+  const clearCart = () => {
+    setCart([]); // Set cart to an empty array
+  };
+
+  // Update localStorage whenever the cart changes
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  // Calculate cart length correctly
+  const cartLength = cart.reduce((total, item) => total + (item.quantity || 0), 0);
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, clearCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, cartLength }}>
       {children}
     </CartContext.Provider>
   );
-};
-
-export const useCart = () => {
-  return useContext(CartContext);
 };

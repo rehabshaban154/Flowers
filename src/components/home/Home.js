@@ -43,14 +43,13 @@ export default function Home() {
         />
         
         <div className="info">
-          <h2>
+          <h2 style={{color:'white'}}>
             Discover Our Collection <br />
             <span>Same Day Delivery</span>
           </h2>
           <Link to='/Shop'>Shop Now</Link>
         </div>
 
-        {/* Profile Icon */}
 
         {/* Show Login Component */}
         {showLogin && <Login />}
@@ -58,7 +57,7 @@ export default function Home() {
       <div className='about' style={{marginTop:'200px'}}>
       <h2 style={{fontFamily:'cursive',fontWeight:'bold',marginLeft:'74px',color:'var(--alt) !important'}}>About Us 👀</h2>
         <div className='container flex'>
-        <img src={about} style={{width:'400px',height:'350px',borderRadius:'6px'}}/>
+        <img src={about} style={{width:'400px',height:'466px',borderRadius:'6px'}}/>
         <div className='disc'>
           <p>Looking for a beautiful, reliable, affordable flower bouquet ?! You have come to the right place. 
             Customer service is our top priority. We offer 100% money back guarantee. Send Flowers to your beloved ones all over Egypt from anywhere in the world. 

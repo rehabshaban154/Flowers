@@ -61,6 +61,7 @@
 .item .disc{
     border-bottom: 2px solid var(--main);
     padding-bottom: 3px;
+    min-height: 128px;
 }
 .item a,
 .item-details-container button{
@@ -128,12 +129,15 @@ button:not(.success-modal button){
     margin-top: -2px !important;
 }
 
-.shoose{
+.choose{
     background-color: rgb(233, 30, 99);
     color: white;
     padding: 13px;
     border-radius: 8px;
     position: relative;
     top: 112px;
-
+    transition: 0.5s;
+}
+.choose:hover{
+    background-color: rgb(230, 133, 165);
 }

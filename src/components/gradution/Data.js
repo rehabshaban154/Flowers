@@ -7,6 +7,7 @@ import grad6 from '../../Assets/gr6.jpg';
 
 const Endata = [
   {
+    id:1,
     img: grad1,
     title: 'Congratulations Rose Bouquet',
     disc: 'Celebrate their big day with a bouquet of fresh red roses, symbolizing success.',
@@ -14,6 +15,7 @@ const Endata = [
     color: 'Red',
   },
   {
+    id:2,
     img: grad2,
     title: 'Golden Tulip Glory',
     disc: 'A radiant golden tulip bouquet to mark the achievement with style.',
@@ -21,13 +23,16 @@ const Endata = [
     color: 'Yellow',
   },
   {
+    id:3,
     img: grad3,
     title: 'Rose Gold Graduation Bouquet',
     disc: 'A sophisticated arrangement of roses and greenery for the star graduate.',
     price: '$180.00',
     color: 'Rose Gold',
   },
+
   {
+    id:4,
     img: grad4,
     title: 'Platinum Celebration Arrangement',
     disc: 'An exclusive collection of white lilies and orchids, perfect for a standout graduate.',
@@ -40,6 +45,7 @@ const Endata = [
     disc: 'A bouquet of vibrant sunflowers, symbolizing a bright future ahead.',
     price: '$130.00',
     color: 'Yellow',
+
   },
   {
     img: grad6,
